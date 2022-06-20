@@ -1,0 +1,26 @@
+﻿@model TravelTripProje.Models.Siniflar.Hakkimizda
+@{
+    ViewBag.Title = "HakkımızdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>HakkımızdaGetir</h2>
+
+        
+@using (Html.BeginForm("HakkımızdaGuncelle", "Admin", FormMethod.Post))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = ("readonly") })
+        <br />
+        @Html.LabelFor(x => x.Aciklama)
+        @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ResimUrl)
+        @Html.TextBoxFor(x => x.ResimUrl, new { @class = "form-control" })
+        <br />
+
+        <br />
+        <button class="btn btn-success">Düzenle</button>
+    </form>
+}
